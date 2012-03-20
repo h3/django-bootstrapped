@@ -60,7 +60,8 @@ Output::
     <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 
-```bootstrap_less```
+Loading LESS
+------------
 
 ::
 
