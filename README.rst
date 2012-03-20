@@ -51,6 +51,7 @@ Loading bootstrap uncompressed
 ------------------------------
 
 ::
+
     {% with dev=true %}
     {% include "bootstrap/medias.inc.html" %}
     {% endif %}
