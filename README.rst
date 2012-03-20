@@ -9,7 +9,7 @@ This application depends on django.contrib.staticfiles.
 
 No files from Twitter's Bootstrap toolkit have been modified and retain their Apache 2.0 license.
 
-* Note: This app only works on Django 1.3 and newer.
+ * Note: This app only works on Django 1.3 and newer.
 
 Installation
 ============
@@ -38,6 +38,7 @@ Loading bootstrap
 -----------------
 
 ::
+
     {% include "bootstrap/medias.inc.html" %}
 
 Output::
