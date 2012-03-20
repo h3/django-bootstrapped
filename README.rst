@@ -38,7 +38,8 @@ Loading bootstrap
 -----------------
 
 ::
-    {% include "bootstrap/medias.inc.html" %}
+    {% include "bootstrap/css.inc.html" %}
+    {% include "bootstrap/js.inc.html" %}
 
 Output::
 
@@ -51,7 +52,8 @@ Loading bootstrap uncompressed
 
 ::
     {% with dev=true %}
-    {% include "bootstrap/medias.inc.html" %}
+    {% include "bootstrap/css.inc.html" %}
+    {% include "bootstrap/js.inc.html" %}
     {% endif %}
 
 Output::
