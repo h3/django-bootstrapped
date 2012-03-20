@@ -58,11 +58,11 @@
     {% block app.styles %}{% endblock%}
     {% endblock %}
     {% block site.scripts %}
-    {% include "bootstrap/js.inc.html" %}
     {# Javascript at the bottom for fast page loading #}
     <script src="{{ STATIC_URL }}bootstrap/js/jquery.min.js"></script>
     <script>!window.jQuery && document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"><\/script>');</script>
-        <script src="{{ STATIC_URL }}bootstrap/js/jquery.cookie.js"></script>
+    {% include "bootstrap/js.inc.html" %}
+    <script src="{{ STATIC_URL }}bootstrap/js/jquery.cookie.js"></script>
     <script>
     var django = (function($){
         var _urls = {},
