@@ -32,56 +32,40 @@ Configuration
 
 
 Template Usage
-=================
-This application exposes a few template tags for including the Bootstrap toolkit files.
+==============
 
-Load the template tags before usage::
+Loading bootstrap
+-----------------
 
-    {% load bootstrap %}
-
-```bootstrap_css```
-
-This tag renders the link tag for the bootstrap.min.css file.  It will render the un-minified version if
-settings.TEMPLATE_DEBUG is set to True::
-
-    {% bootstrap_css %}
+::
+    {% include "bootstrap/medias.inc.html" %}
 
 Output::
 
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
-
-```bootstrap_js```
-
-The Bootstrap toolkit provides some javascript love (http://twitter.github.com/bootstrap/#javascript) that is
-compatible with jQuery and Ender.  This tag renders the appropriate script include tag for each plugin defined.  The tag
-does not include jQuery or Ender, that's up to you::
-
-    {% bootstrap_js modal alerts dropdown %}
-
-Output::
-
-    <script src="bootstrap-alerts.js" type="text/javascript"></script>
-    <script src="bootstrap-dropdown.js" type="text/javascript"></script>
-    <script src="bootstrap-modal.js" type="text/javascript"></script>
-
-* Note: The popover javascript file has a dependency on the twipsy file.  If you add popover to the list and forget to add twipsy, the tag will do it for you.
-
-Alternatively, you may just want to include all of the scripts.  If so, just use `all` for the tag arguments::
-
-    {% bootstrap_js all %}
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
 
+Loading bootstrap uncompressed
+------------------------------
 
-```bootstrap_custom_less```
-
-You may want to customize the output of the bootstrap.css using Less (http://lesscss.org/).  Bootstrap was built from
-Preboot, an open-source pack of mixins and variables to be used in conjunction with Less, a CSS preprocessor for faster
-and easier web development.  This tag accepts an argument for a file path somewhere in your /static/ root directory and
-outputs a script tag for it::
-
-    {% bootstrap_custom_less "lib/bootstrap_custom.less" %}
+::
+    {% with dev=true %}
+    {% include "bootstrap/medias.inc.html" %}
+    {% endif %}
 
 Output::
 
-    <link rel="stylesheet/less" type="text/css" href="/static/lib/bootstrap_custom.less" media="all">
-    <script src="/static/js/less-1.1.5.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+```bootstrap_less```
+
+::
+
+    {% bootstrap_less %}
+
+Output::
+
+    <script src="/static/bootstrap/js/less-1.1.5.min.js" type="text/javascript"></script>
