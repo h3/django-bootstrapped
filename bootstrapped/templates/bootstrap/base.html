@@ -32,7 +32,7 @@
     {% endblock%}
 
     {% block site.headstyles %}
-    {% include "bootstrap/css.inc.html" %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap{% if dev %}.min{% endif %}.css" %}">
     {% block project.headstyles %}{% endblock%}
     {% block app.headstyles %}{% endblock%}
     {% endblock %}
